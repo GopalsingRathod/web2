@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>bravaa</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            height: 10vh;
+            width: 100%;
+            background-color: antiquewhite;
+            position:sticky;
+            top: 0;
+            z-index: 1;
+           
+        }
+        .main-header {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        #header-left{
+            display: flex;
+            padding: 15px;
+            padding-left: 40px;
+            gap: 70px;
+            
+        }
+        #header-left ul {
+            display: flex;
+            padding-left: 40px;
+            padding: 13px;
+            list-style: none;
+            gap: 50px;
+        }
+        #header-right{
+            display: flex;
+            justify-content: end;
+            text-align: center;
+            align-content: end;
+            position: absolute;
+            top: 13%;
+            right: 8%;
+          /* gap: 50px; */
+        }
+        #header-right button{
+            font-size: 16px;
+            padding: 10px;
+            width: 145px;
+            border-radius: 20px;
+           
+        }
+        #header-right i{
+            padding: 15px;
+            gap: 20px;
+            font-size: 18px;
+        }
+
+        /* Home */
+        .home{
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+        .home img{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            filter:brightness(60%) ;
+        }
+        .home-detail{
+            padding: 20px;
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            color: #ffffff;
+        }
+        .home-detail h1{
+             font-size: 60px;
+            gap: 20px;
+             width: 450px;
+            
+        }
+        .home-detail p{
+            font-size: 21px;
+            width: 370px;
+            line-height: 25px;
+            margin-top: 20px;
+        }
+        .home-detail button{
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 25px;
+            width: 150px;
+        }
+        .button1{
+            gap: 20px;
+            background-color: orangered;
+        }
+       /* offer top notch */
+
+       .offer-section{
+        height: 90vh;
+        width: 100%;
+       }
+       .offer-contanear h1{
+        text-align: center;
+        margin-top: 5%;
+        font-size: 50px;
+        font-family:cursive ;
+       }
+       .offer-cards{
+        display: flex;
+            height: 95%;
+            width: 90%;
+            margin-top: 20px;
+            margin-left: 5%;
+            padding: 50px;
+            /* background-color: red; */
+            justify-content: center;
+            gap: 30px;
+       }
+       .cards{
+            background-color: rgb(12, 42, 25);
+            color: #ffffff;
+            display: flex;
+            padding: 10px;
+            height: 90%;
+            width: 450px;
+            flex-direction: column;
+            align-items: center;
+       }
+       .offer-cards img{
+            height: 170px;
+            width: 170px;
+            border-radius: 50%;
+            margin: 20px;
+       }
+       .offer-info{
+        padding: 15px;
+        text-align: center;
+       }
+       .offer-info p{
+        padding: 20px;
+        width: 300px;
+       }
+       .offer-info ul{
+        list-style: none;
+        padding-top: 40px;
+       }
+       .offer-info ul:hover{
+        color: rgb(190, 188, 33);
+       }
+
+       /* explore function */
+
+       .explore{
+        height: 100vh;
+        width: 100%;
+        position: relative;
+       }
+       .explore-tital h1{
+        width: 700px;
+        text-align: center;
+        font-size: 52px;
+        font-family:cursive ;
+        position: absolute;
+        top: 5%;
+        left: 25%;
+       
+       }
+       .explore-img1 {
+        height: 500px;
+        margin-top: 150px;
+    
+       }
+       .explore-img2{
+        height: 300px;
+        width: 350px;
+        position: absolute;
+        top: 0;
+        right: 0;
+       }
+       .explore-info{
+        position: absolute;
+        bottom: 8%;
+        right: 17%;
+       }
+       .explore-info p{
+        width: 450px;
+        margin-top: 10px;
+        word-spacing: 8px;
+        font-size: 18px;
+        line-height: 30px;
+        padding: 10px;
+       }
+       .explore-info button{
+        background-color: orangered;
+        color: #ffffff;
+        margin: 30px;
+        padding: 15px;
+        width: 160px;
+        border-radius: 40px;
+       }
+
+       /*  this week's top recipes */
+
+       .top-recipes{
+        height: 150vh;
+        width: 100%;
+        position: relative;
+       }
+       .top-recipes-titel h1{
+        font-size: 40px;
+        margin-top: 20px;
+        text-align: center;
+        justify-items: center;
+        font-family:cursive ;
+       }
+       .top-recipes-titel p{
+        padding: 15px;
+        font-size: 18px;
+        width:600px;
+        text-align: center;
+        word-spacing: 8px;
+        /* justify-items: center; */
+        margin-left: 31%;
+        line-height: 28px;
+       }
+       .recipes-comtainer{
+        display: flex;
+        gap: 40px;
+        padding: 20px;
+        justify-content: center;
+        
+       }
+       .recipes-item img{
+        border-radius: 20px;
+       }
+       .recipes-comtainer .recipes-item h4{
+        width: 360px;
+        padding: 14px;
+        text-align: center;
+       }
+       .recipes-comtainer .recipes-item p{
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+       }
+       .recipes-button button{
+        padding: 13px;
+        width: 150px;
+        background-color: orangered;
+        color: #ffffff;
+       border-radius: 40px;
+        position: absolute;
+        bottom: 5%;
+        left: 45%;
+       }
+
+       /* festival-season */
+
+       .festival-season{
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        position: relative;
+       }
+       .festival-contaner{
+        display: flex;
+       }
+       .festival-info{
+        margin-top: 15%;
+        margin-left: 8%;
+       }
+       .festival-info h1{
+        font-size: 50px;
+        width: 650px;
+        color: #ffffff;
+        font-family:cursive ;
+       }
+       .festival-info h1 span{
+        color: orangered;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+       }
+       .festival-info p{
+        color: #ffffff;
+        margin-top: 25px;
+        width: 400px;
+        font-size: 18px;
+        line-height: 30px;
+       }
+       .festival-info button{
+        margin-top: 35px;
+        padding: 20px;
+        width: 140px;
+        border-radius: 40px;
+        background-color: orangered;
+        color: #ffffff;
+       }
+       .festival-image .img1 img{
+        height: 500px;
+        width: 500px;
+        margin-top: 22%;
+        border-radius: 50%;
+        margin-left: 10%;
+       }
+      .festival-discount img {
+        height: 180px;
+        width: 180px;
+        position: absolute;
+        top: 18%;
+        right: 10%;
+      }
+
+      /* application install */
+
+      .application{
+        display: flex;
+        height: 90vh;
+        width: 100%;
+        position: relative;
+      }
+      .app-conteanar{
+        /* display: flex; */
+      }
+      .app-image img{
+        margin-top: 20%;
+        margin-left: 50%;
+        height: 550px;
+        width: 400px;
+        border: 2px solid black;
+        border-radius: 20px;
+      }
+      .app-process{
+       position: absolute;
+       top: 20%;
+       right: 13%;
+      }
+      .app-process h1{
+        font-size: 40px;
+        width: 500px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      .app-process p{
+        margin-top: 20px;
+        line-height: 30px;
+        font-size: 18px;
+        width: 400px;
+      }
+      .app-process img{
+        margin-right: 20px;
+        margin-top: 30px;
+      }
+
+      /* Footer-section */
+
+      footer{
+        height: 50vh;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        position: relative;
+      }
+      footer div{
+        color: #ffffff;
+        padding-left: 40px;
+        padding-top: 20px;
+        margin: 30px;
+
+      }
+      footer div ul{
+        padding-top: 10px;
+        line-height: 40px;
+        list-style: none;
+        color: #d6d0d0;
+      }
+      .footer-right{
+        width: 500px;
+        
+      }
+      .footer-right h3{
+        /* display: flex; */
+        line-height: 30px;
+        margin-left: 10%;
+      }
+      .icon{
+        position: absolute;
+        top: 0%;
+        right: 5%;
+      }
+      .icon h3{
+        width: 300px;
+      }
+      .icon i{
+        font-size: 23px;
+        padding: 14px;
+      }
+      .copyright{
+        width: 670px;
+        border-top: 1px solid white;
+      }
+      .copyright h1{
+        position: absolute;
+        right: 14%;
+        top: 50%;
+        font-size: 20px;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main-header">
+        <div id="header-left">
+            <h1>BraVaa</h1>
+            <ul>
+                <li>Our Foods</li>
+                <li>Our Locations</li>
+                <li>About Us</li>
+            </ul>
+        </div>
+        <div id="header-right">
+            <button>Order Now</button>
+            <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+    </div>
+    </header>
+    <section class="home">
+        <img src="./bravaaimg/bravaa-home (2).jpg" alt="home page">
+        <div class="home-detail">
+            <h1>Best thai food in Jalgaon</h1>
+            <p>Looking for an eco-friendly restaurant in United states? Check out our selection of sustainable restaurant. </p>
+    
+            <button class="button1"> Order Online </button>
+            <button class="button2"> Book a Table </button>
+        </div>
+    </section>
+    <section class="offer-section">
+        <div class="offer-contanear">
+            <h1>We Offer Top Notch !!</h1>
+        </div>
+        <div class="offer-cards">
+            <div class="cards">
+                <img src="./bravaaimg/offer-1.jpg" alt="breakfast" >
+                <div class="offer-info">
+                    <h1>breakfast</h1>
+                    <p>As export specialists with more than Food Group will work with.</p>
+                    <ul>
+                        <li>View More</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cards">
+                <img src="./bravaaimg/offer-2.jpg" alt="appetizers">
+                <div class="offer-info">
+                    <h1>Appetizers</h1>
+                    <p>As export specialists with more than Food Group will work with.</p>
+                    <ul>
+                        <li>View More</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cards">
+                 <img src="./bravaaimg/offer-3.jpg" alt="desserts">
+                 <div class="offer-info">
+                    <h1>Desserts</h1>
+                    <p>As export specialists with more than Food Group will work with.</p>
+                    <ul>
+                        <li>View More</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="explore">
+        <div class="explore-tital">
+            <h1>Good things come to those who cook for others</h1>
+            <div >
+                <img class="explore-img1" src="./bravaaimg/explore-1.jpg" alt="1">
+                <img class="explore-img2" src="./bravaaimg/explore-2.jpg" alt="2">
+            </div>
+            <div class="explore-info">
+                <p>As export specialists with more than 4 decades of Industry experience,
+                     MT Food Group will work with your team to source a range of premium products
+                      for your business through our extensive network of suppliers.
+                    </p>
+                
+                <p>Industry experience, MT Food Group will work with products for your
+                     business through our extensive network of suppliers.
+                </p>
+            
+                <button>Explore Menu</button>
+            </div>
+        </div>
+
+    </section>
+    <section class="top-recipes">
+    <div class="top-recipes-titel">
+        <h1>This Week's Top Recipes</h1>        
+        <p>Food grape cafe pasta locally grown heating dish healthy Mustard chopsticks banue drink desert kitchen.</p>
+    
+    </div>
+        <div class="recipes-comtainer">
+        <div class="recipes-item">
+            <img src="./bravaaimg/recipes-1.jpg" alt="one" height="250px" width="350px">
+            <h4>Butter Naan served with Paneer Butter Masala or Dal Makhani. </h4>
+            <p>Cook: 30 mins Speedy Indian Healthy Dishes</p>
+        </div>
+        <div class="recipes-item">
+            <img src="./bravaaimg/recipes-2.jpg" alt="one" height="250px" width="350px">
+            <h4>A Thali with multiple small dishes including dal, vegetables, pickles, rice, and chapati. </h4>
+            <p>Cook: 30 mins Speedy Indian Healthy Dishes</p>
+        </div>
+        <div class="recipes-item">
+            <img src="./bravaaimg/recipes-3.jpg" alt="one" height="250px" width="350px">
+            <h4>Pav Bhaji - a popular Indian street food consisting of bread rolls (pav) served with a spicy vegetable mash (bhaji).</h4>
+            <p>Cook: 30 mins Speedy Indian Healthy Dishes</p>
+        </div>
+    </div>
+    <div class="recipes-comtainer">
+        <div class="recipes-item">
+            <img src="./bravaaimg/recipes-4.jpg" alt="one" height="250px" width="350px">
+            <h4> Likely a spread featuring Pakoras (fried fritters) and accompaniments like naan and dal. </h4>
+            <p>Cook: 30 mins Indian Healthy Dishes</p>
+        </div>
+        <div class="recipes-item">
+            <img src="./bravaaimg/recipes-5.jpg" alt="one" height="250px" width="350px">
+            <h4>2. This looks like Paneer Butter Masala served with naan or paratha.
+            </h4>
+            <p>Cook: 30 mins Indian Healthy Dishes</p>
+        </div>
+        <div class="recipes-item">
+            <img src="./bravaaimg/recipes-6.jpg" alt="one" height="250px" width="350px">
+            <h4>3. Appears to be Khandvi, a Gujarati dish made from gram flour and yogurt, garnished with mustard seeds, coconut, and coriander.
+            </h4>
+            <p>Cook: 30 mins Indian Healthy Dishes</p>
+        </div>
+    </div>
+    <div class="recipes-button">
+        <button>Explore Menu</button>
+    </div>
+
+    </section>
+
+    <section class="festival-season">
+        <div class="festival-contaner">
+            <div class="festival-info">
+                <h1>Get Upto <span>50%</span> Offer On Featival Season ! </h1>
+                <p>As export specialists with more than 4 decades of products for your business through our extensive network of suppliers.</p>
+                <button> Order Now</button>
+            </div>
+            <div class="festival-image">
+                <div class="img1">
+                    <img src="./bravaaimg/festival-image-2.jpg" alt="festival-image">
+                </div>
+                <div class="festival-discount">
+                    <img src="./bravaaimg/Discount-Percent.png" alt="Discount-Percent">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="application">
+        <div class="app-conteanar">
+            <div class="app-image">
+                <img src="./bravaaimg/application.jpg" alt="application">
+            </div>
+            <div class="app-process">
+                 <h1>Download Bravaa Now Available On IPhone & Android!</h1>
+                 <p>Industry experience, MT Food Group will work with products for your business through our.</p>
+                 <!-- <div> -->
+                    <img src="./bravaaimg/Mobile_Badge_GooglePlay.png" alt="play_store" height="40px" width="150px">
+                    <img src="./bravaaimg/Mobile_AppleStore.png" alt="apple_store" height="40px" width="150px">
+                 <!-- </div> -->
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <h2>Company</h2>
+            <ul>
+                <li> About Us </li>
+                <li> Support </li>
+                <li> Community </li>
+                <li> Careers </li>
+
+            </ul>
+        </div>
+        <div>
+            <h2>Explore</h2>
+            <ul>
+                <li> partners </li>
+                <li> Dealears </li>
+                <li> Reviews </li>
+                <li> Ambassdors </li>
+
+            </ul>
+        </div>
+        <div>
+            <h2>Orders</h2>
+            <ul>
+                <li> Order Status </li>
+                <li> Shipping </li>
+                <li> Returns </li>
+                <li> Financing </li>
+
+            </ul>
+        </div>
+        <div class="footer-right">
+            
+                <h3>Terms & Conditions</h3>
+                <h3>Privacy & Policy</h3>
+                <div class="icon">
+                    <h3>Our social networks</h3>
+                    <a href="https://www.facebook.com" target="_blank"><i
+                        class="fa-brands fa-facebook "></i></a>
+                    <a href="https://twitter.com" target="_blank"><i
+                        class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"><i
+                        class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="copyright">
+                   <h1>@Copy Right By Gopal Rathod</h1> 
+                    </div>
+        </div>
+    </footer>
+</body>
+ <script src="https://kit.fontawesome.com/97e7544665.js" crossorigin="anonymous"></script>
+</html>
