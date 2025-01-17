@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brown</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+        }
+        header{
+            height: 10vh;
+            width: 100%;
+            display: flex;
+            background-color: rgb(189, 188, 188);
+            list-style: none;
+            flex-direction: column;
+            /* position: fixed; */
+            /* position: relative; */
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            
+        }
+        .head-left{
+            display: flex;
+            gap: 40px;
+            position: absolute;
+            top: 35%;
+            left: 6%;
+        }
+        .head-left h3{
+            font-size: 20px;
+        }
+        .head-left li{
+            font-size: 17px;
+        }
+        .head-right{
+            display: flex;
+            gap: 40px;
+            padding: 20px;
+            position: absolute;
+            top: 10%;
+            right: 14%;  
+        }
+        .head-right li{
+            font-size: 17px;
+        }
+        .head-right-button button{ 
+            padding: 10px;
+            width: 120px;
+            border-radius: 20px;
+            background-color: black;
+            color: white;
+            position: absolute;
+            top: 25%;
+            right: 5%;
+        }
+        /* home-section */
+        .home-section{
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(198, 195, 191);
+            position: relative;
+        }
+        .container-1{
+            font-size: 30px;
+            
+        }
+        .container-1 h1{
+            gap: 20px;
+            position: absolute;
+            top: 8%;
+            left:6%;
+        }
+        .container-1 h2{
+            color: grey;
+            font-style: italic;
+            position: absolute;
+            top: 17%;
+            left: 18%;
+        }
+        .container-1 h3{
+            font-size: 45px;
+            color: grey;
+            font-style: italic;
+            position: absolute;
+            top: 26%;
+            left: 6%;
+        }
+        .container-1 span{
+            color: orangered;
+        }
+        .container-1 h1 span img{
+            height: 35px;
+            width: 130px;
+            border-radius: 20px;
+        }
+        .container-1 h2 span{
+            font-style: normal;
+        }
+        .container-1 h3 span{
+            font-style: normal;
+        }
+        .container-1 h3 span img{
+            height: 34px;
+            width: 70px;
+            border-radius: 20px;
+        }
+        .container-1 h4 span img{
+            height: 100px;
+            width: 98px;
+            rotate: 15deg;
+            position: absolute;
+            top: 13.4%;
+            left: 8.5%;
+        }
+        /* home-section-container-2 */
+        .container-2 h1{
+            font-size: 28px;
+            color: orangered;
+            font-style: italic;
+            position: absolute;
+            top: 30%;
+            right: 36%;
+        }
+        .container-2 img{
+            height: 60px;
+            width: 60px;
+            rotate: 20deg;
+            border-radius: 10px;
+            position: absolute;
+            top: 26%;
+            right: 27%;
+        }
+        .container-2 p{
+            width: 460px;
+            font-size: 20px;
+            line-height: 26px;
+            position: absolute;
+            top: 38%;
+            right: 15%;
+
+        }
+        /* home-sec-next-div */
+        .bottom-container{
+            display: flex;
+        }
+        .bottom-1 img{
+            height: 270px;
+            width: 535px;
+            position: absolute;
+            bottom: 8%;
+            left: 6%;
+        }
+        .bottom-2{
+            position: absolute;
+            bottom: 10%;
+            right: 36%; 
+            line-height: 32px;
+        }
+        .bottom-2 img{
+            height: 150px;
+            width: 320px;
+        }
+        .bottom-2 h3{
+            font-size: 18px;
+            color: rgb(56, 55, 55);
+        }
+        .bottom-3{
+            line-height: 32px;
+            position: absolute;
+            bottom: 10%;
+            right: 13%;
+        }
+        .bottom-3 img{
+            height: 150px;
+            width: 320px;
+           
+        }
+        .bottom-3 h3{
+            font-size: 18px;
+            color: rgb(56, 55, 55);
+        }
+        /* brands-section */
+        .brands-section{
+            height: 35vh;
+            width: 100%;
+            justify-items: center;
+        }
+        #brands-section-1 ul{
+            font-size: 22px;
+            display: flex;
+            gap: 200px;
+            margin-top: 35px;
+            list-style: none;
+        }
+        #brands-section-2 ul{
+            font-size: 22px;
+            display: flex;
+            gap: 170px;
+            margin-top: 40px;
+            list-style: none;
+        }
+        #brands-section-3 p{
+            width: 400px;
+            color: grey;
+            line-height: 30px;
+            font-size: 18px;
+        margin-top: 50px;
+        }
+        /* container-about-me */
+        .container-about-me{
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(198, 195, 191);
+            justify-content: center;
+            display: flex;
+        }
+        .about-me{
+            height: 97%;
+            width: 98%;
+            margin-top: 10px;
+            border-radius: 20px;
+            background-color: black;
+            color: white;
+            position: relative;
+        }
+        #about-info-1{
+            font-size: 25px;
+
+        }
+        #about-info-1 h1{
+            width: 600px;
+            position: absolute;
+            top: 14%;
+            left: 5%;
+        }
+        #about-info-1 h2{
+            width: 700px;
+            position: absolute;
+            top: 23%;
+            left: 5%;
+        }
+        #about-info-1 h3{
+            font-size: 16px;
+           color: rgb(193, 188, 188);
+            position: absolute;
+            top: 8%;
+            left: 5%;
+        }
+        #about-info-1 span{
+            color: orangered;
+        }
+        #about-info-1 span img{
+            height: 30px;
+            width: 85px;
+            border-radius: 20px; 
+        }
+        #about-info-1 p{
+            width: 580px;
+            font-size: 17px;
+            line-height: 25px;
+            color: rgb(193, 188, 188);
+            position: absolute;
+            top: 35%;
+            left: 5%;
+        }
+        .about-info-image img{
+            height: 620px;
+            width: 650px;
+            border-radius: 10px;
+            position: absolute;
+            top: 5%;
+            right:2%;
+        }
+        .about-info-image button{
+            width: 60px;
+            font-size: 30px;
+            background-color: orangered;
+            color: white;
+            padding: 10px;
+            border-radius: 50px;
+            position: absolute;
+            bottom: 8%;
+            right: 40%;
+        }
+    #about-skills{
+        display: flex;
+        position: absolute;
+        padding: 10px;
+        bottom: 10%;
+        left: 5%;   
+        gap: 20px;
+    }
+    #about-skills h1{
+        gap: 20px;
+        line-height: 40px;
+    }
+    #about-skills p{
+        width: 220px;
+        line-height: 25px;
+        color: rgb(193, 188, 188);
+    }
+    /* section since-2020 */
+    .since-2020{
+        height: 130vh;
+        width: 100%;
+        background-color: rgb(198, 195, 191);
+        position: relative;
+        gap: 10px;
+    }
+    #since-head-1 span img{
+            height: 35px;
+            width: 85px;
+            border-radius: 20px; 
+    }
+    #since-head-1 span {
+            color: orangered; 
+    } 
+    #since-head-1 h4{
+        font-size: 18px;
+        position: absolute;
+        top: 5%;
+        left: 7%;
+    }   
+    #since-head-1 h1{
+        width: 600px;
+        font-size: 50px;
+        position: absolute;
+        top: 10%;
+        left: 7%;
+    }
+    #since-head-2{
+        position: absolute;
+        top: 10%;
+        right: 12%;
+    }
+    #since-head-2 p{
+        width: 430px;
+        font-size: 18px;
+        color: rgb(37, 34, 34);
+    }
+    #since-head-2 button{
+        width: 150px;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 20px;
+        color: white;
+        background-color: orangered;
+    }
+    #writer-mark{
+        font-size: 260px;
+        /* font-family:; */
+        color: rgb(187, 178, 166);
+        position: absolute;
+        top: 25%;
+    }
+    #writer-mark img{
+        height: 420px;
+        width: 470px;
+        position: absolute;
+        top: 7%;
+        right: 17%;
+    }
+    #cryoto-info{
+        position: absolute;
+        bottom: 8%;
+        right: 21%;
+    }
+    #cryoto-info h2{
+        font-size: 26px;
+       
+    }
+    #cryoto-info p{
+        color: rgb(62, 63, 64);
+        width: 410px;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    /* section hear-from-clients */
+    .hear-from-clients{
+        height: 80vh;
+        width: 100%;
+         background-color: black;
+        color: white;
+        justify-items: center;
+        text-align: center;
+        align-items: center;
+        padding: 60px;
+        gap: 40px;  
+    }
+    .clients-container{
+            height: 85%;
+            width: 100%;
+            display: flex;
+            padding: 35px;
+            gap: 35px;           
+    }
+    .clients-container div{
+        padding: 25px;
+        height: 80%;
+            width: 55%;
+            background: rgb(62, 58, 58);
+            border-radius: 10px;
+    }
+    .hear-from-clients span img{
+        height: 50px;
+        width: 50px;
+        rotate: -30deg;
+    }
+    .hear-from-clients span{
+        color: orangered;
+    }
+    .hear-from-clients h1{
+        width: 550px;
+        font-size: 40px;
+        align-items: center;
+    }
+    .hear-from-clients h5{
+        color:  rgb(147, 154, 161);
+    }
+/* clients-container-left */
+
+    .clients-container-left{
+        align-items: start;
+        text-align: left;
+        position: relative;
+    }
+    .clients-container-left h3{
+        padding: 10px;
+    }
+    .clients-container-left p{
+        padding: 10px;
+        width: 530px;
+        line-height: 25px;
+    }
+    .clients-container-left img{
+        border-radius: 50px;
+        position: absolute;
+        bottom: 10%;
+    }
+    .clients-container-left h4{
+        font-size: 18px;
+        position: absolute;
+        bottom: 22%;
+        left: 15%;
+    }
+    .clients-container-left h5{
+        font-size: 16px;
+        position: absolute;
+        bottom: 11%;
+        left: 15%;
+    }
+/* clients-container-right */
+    .clients-container-right{
+        align-items: start;
+        text-align: left;
+        position: relative;
+    }
+    .clients-container-right h3{
+        padding: 10px;
+    }
+    .clients-container-right p{
+        padding: 10px;
+        width: 530px;
+        line-height: 25px;
+    }
+    .clients-container-right img{
+        border-radius: 50px;
+        position: absolute;
+        bottom: 10%;
+    }
+    .clients-container-right h4{
+        font-size: 18px;
+        position: absolute;
+        bottom: 22%;
+        left: 15%;
+    }
+    .clients-container-right h5{
+        font-size: 16px;
+        position: absolute;
+        bottom: 11%;
+        left: 15%;
+    }
+
+    /* creative-projects */
+    .creative-projects{
+        height: 180vh;
+        width: 100%;
+        background-color:  rgb(198, 195, 191);
+        justify-items: center;
+        text-align: center;
+        padding:70px;
+        gap: 40px;
+    }
+    .creative-projects h1{
+        font-size: 45px;
+        width: 580px;
+    }
+    .creative-projects p{
+        color: rgb(65, 61, 61);
+        padding-top:15px ;
+        font-size: 20px;
+        width: 700px;
+    }
+    .creative-projects span{
+        color: orangered;
+    }
+    .creative-projects span img{
+        height: 75px;
+        width: 80px;
+        rotate: -20deg;
+        border-radius: 20px;
+    }
+    .creative-projects-images{
+        display: flex;
+            padding: 35px;
+            gap: 35px; 
+            position: relative;
+    }
+    .creative-projects-images div img{
+        height: 400px;
+        width: 650px;
+        border-radius: 10px;
+    }
+    .creative-projects-images div button{
+        padding: 14px;
+        /* opacity: 0.3; */
+        /* color: transparent; */
+        width: 120px;
+        border-radius: 40px;
+    }
+    #first-b1{
+        /* border: 2px solid transparent; */
+        position: absolute;
+        top: 10%;
+        left: 5%;
+    }
+    #first-b2{
+        position: absolute;
+        top: 10%;
+        left: 14%;
+    }
+    #second-b1{
+        position: absolute;
+        top: 10%;
+        right: 37%;
+    }
+    #second-b2{
+        position: absolute;
+        top: 10%;
+        right: 28%;
+    }
+    .creative-projects-bottom{
+        position: relative;
+    }
+    .creative-projects-bottom img{
+        height: 440px;
+        width: 87vw;
+        border-radius: 10px;
+    }
+    #third-b1{
+        padding: 14px;
+        width: 120px;
+        border-radius: 40px;
+        position: absolute;
+        top: 4%;
+        left:3%;
+    }
+    #third-b2{
+        padding: 14px;
+        width: 120px;
+        border-radius: 40px;
+        position: absolute;
+        top: 4%;
+        left: 13%;
+    }
+
+    /* THE <span>INSIGHTFUL</span> TIPS & ARTICLES */
+    
+    .tips-articles{
+        height: 80vh;
+        width: 100%;
+        justify-items: center;
+        padding: 50px;
+    }
+    .tips-articles h1{
+        font-size: 40px;
+        width: 500px;
+        text-align: center;
+    }
+    .tips-articles h1 span{
+        color: orangered;
+    }
+    .tips-articles-part{
+        display: flex;
+        padding: 40px;
+        gap: 20px;
+    }
+    .tips-articles-part div img{
+        height: 250px;
+        width: 370px;
+        border-radius: 10px;
+    }
+    .tips-articles-part div li{
+        font-size: 16px;
+        color: rgb(59, 56, 56);
+    }
+    div li::marker{
+        color: orangered;
+        font-size: 24px;
+    }
+    .tips-articles-part div p{
+        width: 350px;
+        padding: 10px;
+        font-size: 22px;
+        color: rgb(59, 56, 56);
+    }
+
+    /* footer-head */
+    
+    .footer{
+        height: 50vh;
+        width: 100%;       
+        background-color:  rgb(198, 195, 191);
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        font-size: 16px;
+        letter-spacing: 1.2px;
+        color: rgb(16, 53, 18);
+      }
+      .footer-head{
+        gap: 70px;
+          display: flex;
+          align-items: center;
+          display: grid;
+          grid-template-columns: repeat(4,1fr);
+      }
+      .footer-head div{
+        width: 60%;
+        height: 40%;
+          list-style: none;
+        gap: 15px;
+      }
+      .footer-head div span{
+        color: orangered;
+      }
+      .footer-head h2{
+        margin-bottom: 10px;
+      }
+      .footer-head h1{
+        width: 300px;
+        font-size: 35px;
+        margin-bottom: 10px;
+      }
+      .footer-head p{
+        width: 380px;
+      }
+      .footer-head ul{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        line-height: 30px;
+      }
+
+      /* footer-bottom */
+    .footer-bottom{
+        /* flex-direction: end; */
+        gap: 15%;
+        padding-top: 110px;
+        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    #footer-bottom-icon a i{
+        gap: 20px;
+        padding-inline: 10px;
+        font-size: 20px;
+    }
+    .footer-bottom #footer-bottom-icon a:hover{
+        color: orangered;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head-left">
+          <h3>BROWN</h3>
+          <li>Service</li>
+          <li>Case studies</li>
+            
+        </div>
+        <div class="head-right">
+          <li>About</li>
+          <li>Works</li>
+          
+        </div>
+        <div class="head-right-button">
+            <button>Let's talk</button>
+        </div>
+    </header>
+    <section class="home-section">
+        <div class="top-container">
+            <div class="container-1">
+                <h1>ELEVATE YOUR <span>BRAND</span>  <span><img src="./img2/pexels-col2.2.jpg" alt="img"></span></h1>
+                <h2><span>EXPERIENCE</span>  USER FRIENDLY</h2>
+                <h3><span>DESIGNER</span>  <span><img src="./img2/col3.jpg" alt="img2"></span>  NEW HIGHT</h3>
+                <h4><span><img src="./img2/pexels-col2.2.jpg" alt="img3"></span></h4>
+            </div>
+            <div class="container-2">
+                <h1>SAY HI! 👋</h1>
+                <img src="./img2/laptop3.jpg" alt="laptop">
+                <p>My name's BROWN. I've been creating digital products User experiences, 
+                    his extensive experience in creating digital products, user experiences.</p>
+            </div>
+        </div>
+        <div class="bottom-container">
+            <div class="bottom-1">
+                <img src="./img2/brown-home-1.jpg" alt="pic">
+            </div>
+            <div class="bottom-2">
+                <img src="./img2/brown-home-2.jpg" alt="pic2">
+                <h3>Travel WebApp Design </h3>
+                <h3>It's Your World</h3>
+                <h3>Branding  |  Markrting</h3>
+            </div>
+            <div class="bottom-3">
+                <img src="./img2/brown-home-3.jpg" alt="pic3">
+                <h3>Exhibition Website </h3>
+                <h3>Achrome Idents</h3>
+                <h3>Branding  |  Copywriting</h3>
+            </div>
+        </div>
+    </section>
+    <section class="brands-section">
+        <div id="brands-section-1">
+            <ul>
+                <li>Adobe</li>
+                <li>braze</li>
+                <li>HELLOSIGN</li>
+                <li>maze</li>
+                <li>ghost</li>
+            </ul>
+        </div>
+        <div id="brands-section-2">
+            <ul>
+                <li>ATLASSIAN</li>
+                <li>treehouse</li>
+                <li>INTERCOM</li>
+                <li>Opendoor</li>
+                <li>HubSpot</li>
+            </ul>
+        </div>
+        <div id="brands-section-3">
+            <p>More than 25+ Top companies around the world trusted ME with the Brand Experience & Design .</p>
+        </div>
+    </section>
+    <section class="container-about-me">
+        <div class="about-me">
+            <div id="about-info-1">
+                <h3>About Me</h3>
+                <h1>DISCOVER MY <span>JOURNEY</span> </h1>
+                <h2>AND <span><img src="./img2/laptop1.jpg" alt="1"></span> <span>EXPERTISE</span></h2>
+                <p>Dissover My Journey and Expertise in Crafting Digital Products, Experierems Branding Over the Past 8 Years. Passion for Digital Innovation .</p>
+            </div>
+            <div id="about-skills">
+                <div>
+                    <img src="" alt="">
+                    <h1>Brand Identity</h1>
+                    <p>Brand Identity Designing Your Distinctive Visual Voice</p>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <h1>Website Design</h1>
+                    <p>Web Building an Engaging Website for Your Brand</p>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <h1>Development</h1>
+                    <p>We Craft Brands That Engage Your Audience</p>
+                </div>
+            </div>
+            <div class="about-info-image">
+                <img src="./img2/mobile-1.jpg" alt="phone">
+                <button> ↗ </button>
+            </div>
+        </div>
+    </section>
+    <section class="since-2020">
+        <div class="since-container">
+            <div id="since-head-1">
+                <h4>Since 2020</h4>
+                <h1> <span>HIGHLIGHTS</span> OF MY DIGITAL  <span><img src="./img2/since-head-1.jpg" alt="img"></span> PRODUCT</h1>
+            </div>
+            <div id="since-head-2">
+                <p>Bringing Ideas To Life Through Design. Dedicated To Creating Exceptional User Experiences. My Journey Of Over 8 Years In The Digital World</p>
+                <button> Get started </button>
+            </div>
+            <div id="writer-mark">
+                <h1>BROWN</h1>
+                <img src="img2/crypto.jpg" alt="crypto">
+            </div>
+            <div id="cryoto-info">
+                <h2> Crypto Wallet Moblie App<h2>
+                <p>Despite the controversy about cryptocurrencies, 55% of young Americans want to buy Bitcoin in the near future. So for a startup, creating a crypto wallet app might be a lucrative investment .</p>
+            </div>
+        </div>
+    </section>
+    <section class="hear-from-clients">
+        <h5>Testimonials</h5>
+       <h1>LET'S HEAR FROM MY <span><img src="./img2/pexels-col2.jpg" alt="man"></span>  <span>CLIENTS</span></h1>
+       
+       <div class="clients-container">
+            <div class="clients-container-left">
+                <h3>Segment</h3>
+                <p>"Bringing Ideas to Life Through Design. Dedicated to Creating Exceptional User My Journey of Over 8 Years in the Digital World. Remarkable listening and translation of our needs."</p>
+                <img src="./img2/jay.jpg" alt="jay" height="50px" width="50px">
+                <h4>Jay Jadhav</h4>
+                <h5>Chief Technology Officer</h5>
+            </div>
+            <div class="clients-container-right">
+                <h3>Command+R</h3>
+                <p>Provided innovative UI/UX solutions for our e-commerce platform. enhancing user experience and boosting conversion rates. Remarkable listening and translation of our needs."</p>
+                <img src="./img2/aniket.jpg" alt="aniket" height="50px" width="50px">
+                <h4>Aniket Dhangar</h4>
+                <h5>Chief Legal Officer</h5>
+            </div>
+        </div>
+    </section>
+
+    <section class="creative-projects">
+       
+        <h1>MY BEST WORK <span><img src="./img2/mobile-1.jpg" alt="mobile-1"></span> AND <span>CREATIVE</span> PROJECTS</h1>
+        <p>Bringing Ideas To Life Through Design. Dedicated To Creating Exceptional User My Journey Of 8 Years In The Digital World</p>
+       
+        <div class="creative-projects-images">
+            <div>
+                <img src="./img2/creative-projects1.jpg" alt="creative-projects1">
+                <button id="first-b1">Web Design</button>
+                <button id="first-b2">App Design</button>
+            </div>
+            <div>
+                <img src="./img2/creative-projects2.jpg" alt="creative-projects2">
+                <button id="second-b1">Web Design</button>
+                <button id="second-b2">App Design</button>
+            </div>
+        </div>
+        <div class="creative-projects-bottom">
+            <img src="./img2/developer.jpg" alt="developer">
+            <button id="third-b1">Web Design</button>
+            <button id="third-b2">App Design</button>
+        </div>
+        </section>
+        <section class="tips-articles">
+            <h1>THE <span>INSIGHTFUL</span> TIPS & ARTICLES</h1>
+
+            <div class="tips-articles-part">
+                <div>
+                    <img src="./img2/awareness.jpg" alt="awareness">
+                    <li>5 min read</li>
+                    <p>The Art of Noticing: Cultivating Awareness in a Busy World</p>
+                </div>
+                <div>
+                    <img src="./img2/alongside.jpg" alt="alongside">
+                    <li>12 min read</li>
+                    <p>Alongside regular article delving deeper into areas of all things</p>
+                </div>
+                <div>
+                    <img src="img2/article.jpg" alt="article">
+                    <li>7 min read</li>
+                    <p>Write an insightful article,you need to think about your topic </p>
+                </div>
+            </div>
+        </section>
+        <section class="footer">
+            <div class="footer-head">
+                <div>
+                    <h1>READY <span><img src="" alt=""></span> TO GET <span>STARTED</span></h1>
+                    <P>Undo, Line Pencil, Link Variant, Figma Scrolling, Blue Arrow, Prototype Editor, Auto Scroll Mask, Stroke Background, rotate.</P>
+                </div>
+                <div>
+                    <h2>Menu</h2>
+                    <ul>
+                        <li>Home</li>
+                        <li>About Us</li>
+                        <li>Product</li>
+                        <li>Pricing</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Features</h2>
+                    <ul>
+                        <li>Dashboard Analytics</li>
+                        <li>Account Connection</li>
+                        <li>Billing & nvoice</li>
+                        <li>Transaction</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Resources</h2>
+                    <ul>
+                        <li>Forum</li>
+                        <li>Support</li>
+                        <li>Partners</li>
+                        <li>Pricing</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>
+                    <p>Trems | Privacy | Cookies | Legal | Recalls</p>
+                </div>
+                <div>
+                    @2025 Copyright By GMR
+                </div>
+                <div id="footer-bottom-icon">
+                    <a href="https://www.facebook.com" target="_blank"><i
+                        class="fa-brands fa-facebook "></i></a>
+                    <a href="https://twitter.com" target="_blank"><i
+                        class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"><i
+                        class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    
+</body>
+<script src="https://kit.fontawesome.com/97e7544665.js"
+    crossorigin="anonymous"></script>
+</html>
